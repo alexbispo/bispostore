@@ -1,7 +1,9 @@
 # Create user and database on Postgres
 $ sudo -i -u postgres
 
-postgres$ create user my_user with createdb login password 'my_password';
+$ psql
+
+postgres=# create user my_user with createdb login password 'my_password';
 
 # Create a Python virtualenv
 $ sudo apt-get install python-virtualenv
