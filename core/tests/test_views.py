@@ -37,38 +37,3 @@ class ContactViewTestCase(TestCase):
         response = self.client.get(self.url)
         self.assertTemplateUsed(response, 'contact.html')
 
-
-class ProductViewTestCase(TestCase):
-
-    def setUp(self):
-        self.client = Client()
-        self.url = reverse('product_core')
-
-    def tearDown(self):
-        pass
-
-    def test_status_code(self):
-        response = self.client.get(self.url)
-        self.assertEquals(response.status_code, 200)
-
-    def test_template_used(self):
-        response = self.client.get(self.url)
-        self.assertTemplateUsed(response, 'product.html')
-
-
-class ProductListViewTestCase(TestCase):
-
-    def setUp(self):
-        self.client = Client()
-        self.url = reverse('product_list_core')
-
-    def tearDown(self):
-        pass
-
-    def test_status_code(self):
-        response = self.client.get(self.url)
-        self.assertEquals(response.status_code, 200)
-
-    def test_template_used(self):
-        response = self.client.get(self.url)
-        self.assertTemplateUsed(response, 'product_list.html')
