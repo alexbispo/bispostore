@@ -20,7 +20,6 @@ from core import views
 urlpatterns = [
     url(r'^$', views.index, name='index_core'),
     url(r'^contato/$', views.contact, name='contact_core'),
-    url(r'^produto/$', views.product, name='product_core'),
-    url(r'^produtos/', include('catalog.urls', namespace='catalog')),
+    url(r'^catalogo/', include('catalog.urls', namespace='catalog')),
     url(r'^admin/', admin.site.urls),
 ]
