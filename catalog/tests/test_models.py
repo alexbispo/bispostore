@@ -6,10 +6,8 @@ from django.core.urlresolvers import reverse
 
 from model_mommy import mommy
 
-from catalog.models import Category, Product
 
-class CateforyTestCase(TestCase):
-
+class CategoryTestCase(TestCase):
     def setUp(self):
         self.category = mommy.make('catalog.category')
 
@@ -19,8 +17,8 @@ class CateforyTestCase(TestCase):
             reverse('catalog:category', kwargs={'slug': self.category.slug})
         )
 
-class ProductTestCase(TestCase):
 
+class ProductTestCase(TestCase):
     def setUp(self):
         self.product = mommy.make('catalog.product')
 
