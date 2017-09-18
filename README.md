@@ -19,3 +19,19 @@ $ pip install django
 
 # Create a Django project
 $ django-admin startproject my_project
+
+# Create a django app super user
+## Development
+$ ./manage.py createsuperuser
+...
+
+## Production (heroku)
+$ heroku run manage.py createsuperuser
+...
+
+# Deploy
+$ git push heroku master
+...
+
+$ heroku run python manage.py migrate
+...
