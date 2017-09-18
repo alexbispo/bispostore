@@ -3,7 +3,9 @@ $ sudo -i -u postgres
 
 $ psql
 
-postgres=# create user my_user with createdb login password 'my_password';
+postgres=# create user bispo_store_app with createdb login password 'dev123';
+
+postgres=# create database bispostore_db owner = bispo_store_app encoding = 'UTF-8'
 
 # Create a Python virtualenv
 $ sudo apt-get install python-virtualenv
@@ -23,15 +25,19 @@ $ django-admin startproject my_project
 # Create a django app super user
 ## Development
 $ ./manage.py createsuperuser
+
 ...
 
 ## Production (heroku)
 $ heroku run manage.py createsuperuser
+
 ...
 
 # Deploy
 $ git push heroku master
+
 ...
 
 $ heroku run python manage.py migrate
+
 ...
